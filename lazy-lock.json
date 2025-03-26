@@ -5,6 +5,7 @@
   "gitsigns.nvim": { "branch": "main", "commit": "7010000889bfb6c26065e0b0f7f1e6aa9163edd9" },
   "gruvbox-material": { "branch": "master", "commit": "146f40fd42cbef30fed69b4ef51329aeeaceb909" },
   "harpoon": { "branch": "master", "commit": "1bc17e3e42ea3c46b33c0bbad6a880792692a1b3" },
+  "indent-blankline.nvim": { "branch": "master", "commit": "005b56001b2cb30bfa61b7986bc50657816ba4ba" },
   "keyseer.nvim": { "branch": "main", "commit": "6cb478f9b2be4af4680ceb0308a9b49cd6b6ea73" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lualine.nvim": { "branch": "master", "commit": "9fef261b53fbe3a2ef01ee9667f6fde064b1ed10" },
