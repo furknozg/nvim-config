@@ -52,14 +52,31 @@ keymap("n", "<leader>pl", function() vim.cmd(":Lazy") end, { desc = "Open Lazy" 
 
 -- Fterm
 vim.keymap.set('n', '<leader>tt', '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<leader>tt', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<leader>tt', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', {desc = 'Toggle Terminal'})
 
 
 
 
+-- Neogit
+--vim.api.nvim_set_keymap('n', '<leader>pg', ':belowright vsplit | vertical resize 50 | Neogit kind=split<CR>', { desc= "Open Neogit" , noremap = true, silent = true })
 
 
 
+vim.api.nvim_set_keymap('n', '<leader>pg', [[:lua ToggleNeogit()<CR>]], { desc="Open Neogit", noremap = true, silent = true })
 
+function ToggleNeogit()
+	-- Check if a Neogit buffer is already open
+	for _, win in ipairs(vim.api.nvim_list_wins()) do
+		local buf = vim.api.nvim_win_get_buf(win)
+		local name = vim.api.nvim_buf_get_name(buf)
+		if string.match(name, "NeogitStatus") then
+			vim.api.nvim_win_close(win, true) -- Close Neogit window
+			return
+		end
+	end
 
-
+	-- Create a right-side split WITHOUT duplicating the current buffer
+	--vim.cmd("rightbelow vsplit")    -- Open an empty vertical split on the right
+	--vim.cmd("vertical resize")   -- Resize to 50 columns
+	vim.cmd("Neogit kind=split")    -- Open Neogit inside the split
+end
