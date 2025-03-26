@@ -79,7 +79,9 @@ return {
 		"NeogitOrg/neogit",
 		dependencies = {
 			"nvim-lua/plenary.nvim",         -- required
-			"sindrets/diffview.nvim",        -- optional - Diff integration
+			--"sindrets/diffview.nvim",        -- optional - Diff integration
+			--{
+			"echasnovski/mini.diff",
 
 			-- Only one of these is needed.
 			"nvim-telescope/telescope.nvim", -- optional

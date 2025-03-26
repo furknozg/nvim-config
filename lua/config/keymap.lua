@@ -80,3 +80,16 @@ function ToggleNeogit()
 	--vim.cmd("vertical resize")   -- Resize to 50 columns
 	vim.cmd("Neogit kind=split")    -- Open Neogit inside the split
 end
+
+
+
+
+-- Set up a keybinding to trigger codecompanion with <leader>cp
+-- Accept the diff
+vim.api.nvim_set_keymap('n', '<leader>cp', ':CodeCompanion<CR>', { noremap = true, silent = true })
+
+
+
+
+
+

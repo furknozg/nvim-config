@@ -5,7 +5,7 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		config=function()
-				
+
 			local cmp = require'cmp'
 			require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -30,6 +30,7 @@ return {
 				window = {
 					-- completion = cmp.config.window.bordered(),
 					-- documentation = cmp.config.window.bordered(),
+
 				},
 				mapping = cmp.mapping.preset.insert({
 					['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -65,5 +66,40 @@ return {
 			'rafamadriz/friendly-snippets'
 
 		}
+	},
+	{
+		"github/copilot.vim"
+	},
+	{
+		"olimorris/codecompanion.nvim",
+		opts={
+			log_level = "DEBUG", -- or "TRACE"
+		},
+		dependencies = {
+			{ "echasnovski/mini.diff", opts = {} },
+		},
+	},
+	{
+		"echasnovski/mini.diff",
+		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+		keys = {
+			{
+				"<leader>go",
+				function()
+					require("mini.diff").toggle_overlay(0)
+				end,
+				desc = "Toggle mini.diff overlay",
+			},
+		},
+		opts = {
+			view = {
+				style = "sign",
+				signs = {
+					add = "▎",
+					change = "▎",
+					delete = "",
+				},
+			},
+		},
 	}
 }
