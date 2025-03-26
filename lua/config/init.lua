@@ -1,0 +1,8 @@
+require("config.lazy")
+require("config.lualine")
+require("config.fterm")
+require("config.colorscheme")
+require("config.autocmd")
+require("config.keymap")
+require("config.lsp")
+require("config.git")

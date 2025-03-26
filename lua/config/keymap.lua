@@ -9,10 +9,11 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' 
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
 -- Page navigation: ie. <leader>home moves to the page that is above the current buffer
-vim.keymap.set("n", "<leader><Home>", "<C-w>k", { noremap = true, silent = true, desc = 'Buffer Up' }) -- Move up  
-vim.keymap.set("n", "<leader><Del>", "<C-w>h", { noremap = true, silent = true , desc = 'Buffer Left' }) -- Move left  
-vim.keymap.set("n", "<leader><End>", "<C-w>j", { noremap = true, silent = true , desc = 'Buffer Down'  }) -- Move down  
-vim.keymap.set("n", "<leader><PageDown>", "<C-w>l", { noremap = true, silent = true , desc = 'Buffer Right' }) -- Move right  
+vim.keymap.set("n", "<leader>z<Up>", "<C-w>k", { noremap = true, silent = true, desc = 'Buffer Up' }) -- Move up  
+vim.keymap.set("n", "<leader>z<Left>", "<C-w>h", { noremap = true, silent = true , desc = 'Buffer Left' }) -- Move left  
+vim.keymap.set("n", "<leader>z<Down>", "<C-w>j", { noremap = true, silent = true , desc = 'Buffer Down'  }) -- Move down  
+vim.keymap.set("n", "<leader>z<Right>", "<C-w>l", { noremap = true, silent = true , desc = 'Buffer Right' }) -- Move right  
+
 
 -- "normal! gg=G" is for default indentation
 --vim.keymap.set("n", "<leader>fd", "normal! gg=G", { noremap = true, silent = true }) 
@@ -22,6 +23,7 @@ vim.keymap.set("n", "<Leader>F", function()
 	vim.cmd("normal! gg=G") -- Format the entire file
 	vim.fn.winrestview(cursor_position) -- Restore the cursor position
 end, { noremap = true, silent = true, desc='Format Document' })
+
 
 -- harpoon: Control M opens ui, ctrl+a adds file and hjkl navigates with control
 local harpoon = require("harpoon")
@@ -37,7 +39,7 @@ keymap("n", "<C-k>", function() require("harpoon.ui").nav_file(3) end, { desc = 
 keymap("n", "<C-l>", function() require("harpoon.ui").nav_file(4) end, { desc = "Go to Harpoon file 4" })
 
 
-
+-- Generics
 vim.keymap.set("n", "<leader>pv", function()
 	vim.cmd("write") -- Save the current file
 	vim.cmd("NvimTreeToggle") -- Open the file explorer (NvimTree)
@@ -48,7 +50,9 @@ keymap("n", "<leader>pl", function() vim.cmd(":Lazy") end, { desc = "Open Lazy" 
 
 
 
-
+-- Fterm
+vim.keymap.set('n', '<leader>tt', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<leader>tt', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
 
 
