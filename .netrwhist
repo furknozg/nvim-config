@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/furqn/.config/nvim/lua'
+let g:netrw_dirhist_3='/home/furqn/.config/nvim'
+let g:netrw_dirhist_2='/home/furqn/.config/nvim/lua/plugins'
+let g:netrw_dirhist_1='/home/furqn/.config/nvim/lua'
+let g:netrw_dirhist_0='/home/furqn/.config/nvim/lua/config'
+let g:netrw_dirhist_9='/home/furqn/.config/nvim/lua'
+let g:netrw_dirhist_8='/home/furqn/.config/nvim/lua/config'
+let g:netrw_dirhist_7='/home/furqn/.config/nvim/lua'
+let g:netrw_dirhist_6='/home/furqn/.config/nvim/lua/config'
+let g:netrw_dirhist_5='/home/furqn/.config/nvim/lua'
