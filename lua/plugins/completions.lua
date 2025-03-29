@@ -2,7 +2,7 @@ return {
 	{
 		"hrsh7th/cmp-nvim-lsp",
 	},
-	{
+	{	
 		"hrsh7th/nvim-cmp",
 		config=function()
 
@@ -16,6 +16,7 @@ return {
 					expand = function(args)
 						--vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
 						require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+
 						-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
 						-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
 						-- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
@@ -71,12 +72,15 @@ return {
 		"github/copilot.vim"
 	},
 	{
-		"olimorris/codecompanion.nvim",
-		opts={
-			log_level = "DEBUG", -- or "TRACE"
-		},
-		dependencies = {
-			{ "echasnovski/mini.diff", opts = {} },
+		"CopilotC-Nvim/CopilotChat.nvim",
+		opts = {},
+		build = function()
+			vim.cmd("UpdateRemotePlugins") -- You need to restart to make it works
+		end,
+		event = "VeryLazy",
+		keys = {
+			{ "<leader>cce", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat - Explain code" },
+			{ "<leader>cct", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
 		},
 	},
 	{

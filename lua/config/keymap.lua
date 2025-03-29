@@ -9,11 +9,16 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' 
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
 -- Page navigation: ie. <leader>home moves to the page that is above the current buffer
-vim.keymap.set("n", "<leader>z<Up>", "<C-w>k", { noremap = true, silent = true, desc = 'Buffer Up' }) -- Move up  
-vim.keymap.set("n", "<leader>z<Left>", "<C-w>h", { noremap = true, silent = true , desc = 'Buffer Left' }) -- Move left  
-vim.keymap.set("n", "<leader>z<Down>", "<C-w>j", { noremap = true, silent = true , desc = 'Buffer Down'  }) -- Move down  
-vim.keymap.set("n", "<leader>z<Right>", "<C-w>l", { noremap = true, silent = true , desc = 'Buffer Right' }) -- Move right  
+--vim.keymap.set("n", "<leader>z<up>", "<c-w>k", { noremap = true, silent = true, desc = 'buffer up' }) -- move up  
+--vim.keymap.set("n", "<leader>z<left>", "<c-w>h", { noremap = true, silent = true , desc = 'buffer left' }) -- move left  
+--vim.keymap.set("n", "<leader>z<down>", "<c-w>j", { noremap = true, silent = true , desc = 'buffer down'  }) -- move down  
+--vim.keymap.set("n", "<leader>z<right>", "<c-w>l", { noremap = true, silent = true , desc = 'buffer right' }) -- move right  
 
+-- Page navigation: ie. <leader>home moves to the page that is above the current buffer (<leader><Home> up)
+vim.keymap.set("n", "<leader><Home>", "<c-w>k", { noremap = true, silent = true , desc = 'buffer up' }) -- move up
+vim.keymap.set("n", "<leader><Del>", "<c-w>h", { noremap = true, silent = true , desc = 'buffer left' }) -- move left
+vim.keymap.set("n", "<leader><End>", "<c-w>j", { noremap = true, silent = true , desc = 'buffer down' }) -- move down
+vim.keymap.set("n", "<leader><PageDown>", "<c-w>l", { noremap = true, silent = true , desc = 'buffer right' }) -- move right 
 
 -- "normal! gg=G" is for default indentation
 --vim.keymap.set("n", "<leader>fd", "normal! gg=G", { noremap = true, silent = true }) 
@@ -86,7 +91,7 @@ end
 
 -- Set up a keybinding to trigger codecompanion with <leader>cp
 -- Accept the diff
-vim.api.nvim_set_keymap('n', '<leader>cp', ':CodeCompanion<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<leader>cp', ':CodeCompanion<CR>', { noremap = true, silent = true })
 
 
 
