@@ -80,6 +80,15 @@ return {
 		event = "VeryLazy",
 		keys = {
 			{ "<leader>cce", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat - Explain code" },
+			{ "<leader>ccp" , function()
+				local input = vim.fn.input("CopilotChat: ")
+				if input ~= "" then
+					vim.cmd("CopilotChat " .. vim.fn.shellescape(input))
+				end
+			end,
+				desc = "CopilotChat - Open chat" }, -- get prompt input as well
+			{ "<leader>ccc", "<cmd>CopilotChatToggle <cr>", desc = "CopilotChat - Refresh" }, 
+			{ "<leader>ccr", "<cmd>CopilotChatReset<cr>", desc = "CopilotChat - Suggest" },
 			{ "<leader>cct", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
 		},
 	},
